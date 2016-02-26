@@ -23,7 +23,7 @@ describe('db test', function() {
     });
 
     describe('#find()', function() {
-        it('should be an instance of array', function(done: MochaDone) {
+        it('should be an instance article array', function(done: MochaDone) {
             let title: string = 'milano';
             db.find(title, (r: IArticle[]) => {
                 expect(r).be.an.instanceOf(Array);
