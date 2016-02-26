@@ -8,7 +8,6 @@ function connect(): Rx.Observable<mongodb.Db> {
     return Rx.Observable.fromPromise(mongodb.MongoClient.connect(uri));
 }
 
-
 export function count() {
     return connect().flatMap((db: mongodb.Db) => {
         return Rx.Observable.create((observer: Rx.Observer<number>) => {
