@@ -2,8 +2,6 @@ import * as db from '../db';
 import {expect} from 'chai';
 import {IArticle} from '../models/article';
 
-
-
 describe('db test', function() {
     describe('#count()', function() {
         it('should return a number grater than 0', function(done: MochaDone) {
