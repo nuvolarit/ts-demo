@@ -1,5 +1,5 @@
 import readline = require("readline");
-import * as db from "./db";
+import * as db from "./db/db.callback";
 import {IArticle} from './models/article';
 
 let rl = readline.createInterface(process.stdin, process.stdout);
@@ -31,7 +31,10 @@ rl.on("close", () => {
 });
 
 function find(query: string, callback: (result: IArticle[]) => void) {
-    db.find(query, (result: IArticle[]) => {
+    db.find(query, (err, result: IArticle[]) => {
+        if (err){
+            throw err;
+        }
         callback(result);
     });
 }
